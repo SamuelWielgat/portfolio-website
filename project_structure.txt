@@ -1,0 +1,20 @@
+portfolio-website/
+├── app/
+│   ├── layout.tsx
+│   └── page.tsx
+├── components/
+│   ├── layout/
+│   │   ├── Header.tsx
+│   │   └── Footer.tsx
+│   └── sections/
+│       ├── HeroSection.tsx
+│       ├── AboutSection.tsx
+│       ├── SkillsSection.tsx
+│       ├── ProjectsSection.tsx
+│       └── ContactSection.tsx
+├── hooks/
+│   └── useIntersectionObserver.ts
+├── types/
+│   └── project.ts
+└── providers/
+    └── ThemeProvider.tsx
