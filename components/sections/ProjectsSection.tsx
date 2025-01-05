@@ -8,12 +8,14 @@ import { ExternalLink } from 'lucide-react';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 import type { Project } from '@/types/project';
 
+const defaultImage = '/images/project-placeholder.jpeg';
+
 const projects: Project[] = [
   {
     title: 'NextCommerce',
     description:
       'A full-featured e-commerce platform built with Next.js, featuring server-side rendering, API routes, and seamless checkout process.',
-    image: '/placeholder.svg',
+    image: defaultImage,
     link: 'https://nextcommerce.example.com',
     technologies: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
   },
@@ -21,7 +23,7 @@ const projects: Project[] = [
     title: 'DevDash',
     description:
       'A real-time developer dashboard built with React and Socket.io, providing live updates on project status, team productivity, and code quality metrics.',
-    image: '/placeholder.svg',
+    image: defaultImage,
     link: 'https://devdash.example.com',
     technologies: ['React', 'Socket.io', 'TypeScript', 'Tailwind CSS'],
   },
@@ -29,7 +31,7 @@ const projects: Project[] = [
     title: 'AI Code Reviewer',
     description:
       'An AI-powered code review tool that integrates with GitHub, providing automated code suggestions and best practices using natural language processing.',
-    image: '/placeholder.svg',
+    image: defaultImage,
     link: 'https://aicodereview.example.com',
     technologies: ['React', 'Socket.io', 'TypeScript', 'Tailwind CSS'],
   },
