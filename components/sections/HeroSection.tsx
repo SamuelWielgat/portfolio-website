@@ -6,6 +6,7 @@ import { ArrowDown } from 'lucide-react';
 import { TypeAnimation } from 'react-type-animation';
 import { useEffect, useState } from 'react';
 import { useSmoothScroll } from '@/hooks/useSmoothScroll';
+import { siteConfig } from '@/config/site';
 
 const floatingCodeSnippets = [
   'const developer = new FullStackDev();',
@@ -82,7 +83,7 @@ export default function HeroSection() {
           >
             <TypeAnimation
               sequence={[
-                "Hi, I'm Samuel Wielgat",
+                `Hi, I'm ${siteConfig.name}`,
                 1000,
                 'I Build Web Applications',
                 1000,

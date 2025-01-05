@@ -5,6 +5,7 @@ import { useRef } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
+import { siteConfig } from '@/config/site';
 
 const aboutContent = {
   paragraphs: [
@@ -38,7 +39,7 @@ export default function AboutSection() {
           >
             <Image
               src="/me.png"
-              alt="Samuel Wielgat"
+              alt={siteConfig.name}
               width={400}
               height={400}
               className="rounded-full shadow-lg"

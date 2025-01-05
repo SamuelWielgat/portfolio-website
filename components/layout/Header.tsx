@@ -4,6 +4,7 @@
 import { Sun, Moon } from 'lucide-react';
 import { useTheme } from '@/providers/ThemeProvider';
 import { useSmoothScroll } from '@/hooks/useSmoothScroll';
+import { siteConfig } from '@/config/site';
 
 export default function Header() {
   const { darkMode, setDarkMode } = useTheme();
@@ -20,7 +21,7 @@ export default function Header() {
   return (
     <header className="fixed w-full bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm shadow-md z-40">
       <nav className="container mx-auto px-6 py-3 flex justify-between items-center">
-        <h1 className="text-2xl font-bold">Samuel Wielgat</h1>
+        <h1 className="text-2xl font-bold">{siteConfig.name}</h1>
         <div className="flex items-center space-x-4">
           <a
             href="#about"

@@ -1,16 +1,18 @@
 // components/layout/Footer.tsx
 import { Github, Linkedin, Mail } from 'lucide-react';
+import { siteConfig } from '@/config/site';
 
 export default function Footer() {
   return (
     <footer className="bg-white dark:bg-gray-800 shadow-md mt-20">
       <div className="container mx-auto px-6 py-4 flex justify-between items-center">
         <p>
-          &copy; {new Date().getFullYear()} Samuel Wielgat. All rights reserved.
+          &copy; {new Date().getFullYear()} {siteConfig.name}. All rights
+          reserved.
         </p>
         <div className="flex space-x-4">
           <a
-            href="https://github.com/samuelwielgat"
+            href={siteConfig.social.github}
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-blue-600 transition-colors"
@@ -18,7 +20,7 @@ export default function Footer() {
             <Github />
           </a>
           <a
-            href="https://linkedin.com/in/samuelwielgat"
+            href={siteConfig.social.linkedin}
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-blue-600 transition-colors"
@@ -26,7 +28,7 @@ export default function Footer() {
             <Linkedin />
           </a>
           <a
-            href="mailto:samuelwielgat@gmail.com"
+            href={`mailto:${siteConfig.email}`}
             className="hover:text-blue-600 transition-colors"
           >
             <Mail />
