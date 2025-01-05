@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { ArrowDown } from 'lucide-react';
 import { TypeAnimation } from 'react-type-animation';
 import { useEffect, useState } from 'react';
+import { useSmoothScroll } from '@/hooks/useSmoothScroll';
 
 const floatingCodeSnippets = [
   'const developer = new FullStackDev();',
@@ -16,6 +17,7 @@ const floatingCodeSnippets = [
 
 export default function HeroSection() {
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
+  const scrollTo = useSmoothScroll();
 
   useEffect(() => {
     // Set dimensions once mounted
@@ -117,12 +119,14 @@ export default function HeroSection() {
             animate={{ opacity: 1 }}
             transition={{ delay: 1 }}
           >
-            <a
-              href="#about"
-              className="inline-block bg-blue-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-700 transition-colors"
+            <button
+              onClick={() => scrollTo('about')}
+              className="inline-block bg-blue-600 text-white px-8 py-3 rounded-full font-semibold 
+                hover:bg-blue-700 transition-all duration-300 ease-in-out
+                hover:transform hover:scale-105"
             >
               Explore My Work
-            </a>
+            </button>
           </motion.div>
         </div>
       </div>
