@@ -16,8 +16,10 @@ import {
   SiDocker,
   SiAmazon,
   SiGithubactions,
+  SiSpringboot,
 } from 'react-icons/si';
 import { TbApi } from 'react-icons/tb';
+import { FaJava } from 'react-icons/fa';
 
 const skillCategories = {
   Frontend: [
@@ -27,8 +29,10 @@ const skillCategories = {
     { name: 'Tailwind CSS', icon: SiTailwindcss },
   ],
   Backend: [
+    { name: 'Java', icon: FaJava },
+    { name: 'Spring Boot', icon: SiSpringboot },
     { name: 'Node.js', icon: SiNodedotjs },
-    { name: 'GraphQL', icon: SiGraphql },
+    // { name: 'GraphQL', icon: SiGraphql },
     { name: 'REST APIs', icon: TbApi },
   ],
   Database: [
