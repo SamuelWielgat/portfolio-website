@@ -11,28 +11,42 @@ import type { Project } from '@/types/project';
 const defaultImage = '/images/project-placeholder.jpeg';
 
 const projects: Project[] = [
+  // {
+  //   title: 'NextCommerce',
+  //   description:
+  //     'A full-featured e-commerce platform built with Next.js, featuring server-side rendering, API routes, and seamless checkout process.',
+  //   image: defaultImage,
+  //   link: 'https://nextcommerce.example.com',
+  //   technologies: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
+  // },
+  // {
+  //   title: 'DevDash',
+  //   description:
+  //     'A real-time developer dashboard built with React and Socket.io, providing live updates on project status, team productivity, and code quality metrics.',
+  //   image: defaultImage,
+  //   link: 'https://devdash.example.com',
+  //   technologies: ['React', 'Socket.io', 'TypeScript', 'Tailwind CSS'],
+  // },
   {
-    title: 'NextCommerce',
-    description:
-      'A full-featured e-commerce platform built with Next.js, featuring server-side rendering, API routes, and seamless checkout process.',
+    title: 'Design Studio',
+    description: 'A design studio portfolio website',
     image: defaultImage,
-    link: 'https://nextcommerce.example.com',
+    link: 'https://www.design-studio-portfolio-project.com/',
     technologies: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
   },
   {
-    title: 'DevDash',
-    description:
-      'A real-time developer dashboard built with React and Socket.io, providing live updates on project status, team productivity, and code quality metrics.',
+    title: 'Workout Tracker',
+    description: 'A workout tracker website',
     image: defaultImage,
-    link: 'https://devdash.example.com',
-    technologies: ['React', 'Socket.io', 'TypeScript', 'Tailwind CSS'],
+    link: 'https://workout-tracker-client-blue.vercel.app',
+    technologies: ['React', 'Javascript', 'CSS', 'HTML'],
   },
   {
     title: 'AI Code Reviewer',
     description:
       'An AI-powered code review tool that integrates with GitHub, providing automated code suggestions and best practices using natural language processing.',
     image: defaultImage,
-    link: 'https://aicodereview.example.com',
+    link: 'https://aicodereview.app/',
     technologies: ['React', 'Socket.io', 'TypeScript', 'Tailwind CSS'],
   },
 ];
