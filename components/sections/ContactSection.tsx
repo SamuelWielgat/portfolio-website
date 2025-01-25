@@ -5,6 +5,10 @@ import { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 
+interface ApiError extends Error {
+  message: string;
+}
+
 export default function ContactSection() {
   const ref = useRef<HTMLDivElement>(null);
   const isVisible = useIntersectionObserver(ref as React.RefObject<Element>);
@@ -50,7 +54,8 @@ export default function ContactSection() {
 
       setIsSuccess(true);
       setFormData({ name: '', email: '', message: '' });
-    } catch (error: any) {
+    } catch (err) {
+      const error = err as ApiError;
       setError(error.message || 'Failed to send message');
       console.error('Error sending message:', error);
     } finally {
@@ -87,7 +92,7 @@ export default function ContactSection() {
               className="text-center text-green-600 dark:text-green-400 py-8"
             >
               <p className="text-xl font-medium">Thank you for your message!</p>
-              <p className="mt-2">I'll get back to you soon.</p>
+              <p className="mt-2">I&apos;ll get back to you soon.</p>
             </motion.div>
           ) : (
             <>

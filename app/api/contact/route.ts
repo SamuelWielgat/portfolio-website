@@ -3,6 +3,12 @@ import { Resend } from 'resend';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
+interface ResendError {
+  message: string;
+  statusCode?: number;
+  name?: string;
+}
+
 export async function POST(request: Request) {
   try {
     if (!process.env.RESEND_API_KEY) {
@@ -59,10 +65,11 @@ Message: ${message}
       { success: true, message: 'Email sent successfully', data },
       { status: 200 }
     );
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('Contact form error:', error);
+    const err = error as ResendError;
     return NextResponse.json(
-      { error: error.message || 'Error sending message' },
+      { error: err.message || 'Error sending message' },
       { status: 500 }
     );
   }

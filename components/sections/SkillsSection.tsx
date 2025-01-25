@@ -10,7 +10,7 @@ import {
   SiTypescript,
   SiTailwindcss,
   SiNodedotjs,
-  SiGraphql,
+  // SiGraphql,
   SiMongodb,
   SiPostgresql,
   SiDocker,
