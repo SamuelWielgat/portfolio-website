@@ -7,7 +7,7 @@ import { useSmoothScroll } from '@/hooks/useSmoothScroll';
 import { siteConfig } from '@/config/site';
 
 export default function Header() {
-  const { darkMode, setDarkMode } = useTheme();
+  const { darkMode, setDarkMode, isLoaded } = useTheme();
   const scrollTo = useSmoothScroll();
 
   const handleNavClick = (
@@ -16,6 +16,30 @@ export default function Header() {
   ) => {
     e.preventDefault();
     scrollTo(sectionId);
+  };
+
+  // Add a safe render for the theme toggle button
+  const renderThemeToggle = () => {
+    if (!isLoaded) {
+      return (
+        <button
+          className="p-2 rounded-full bg-gray-200 dark:bg-gray-700 transition-colors duration-300"
+          aria-label="Loading theme toggle"
+        >
+          <Moon size={20} />
+        </button>
+      );
+    }
+
+    return (
+      <button
+        onClick={() => setDarkMode(!darkMode)}
+        className="p-2 rounded-full bg-gray-200 dark:bg-gray-700 transition-colors duration-300"
+        aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}
+      >
+        {darkMode ? <Sun size={20} /> : <Moon size={20} />}
+      </button>
+    );
   };
 
   return (
@@ -51,12 +75,7 @@ export default function Header() {
           >
             Contact
           </a>
-          <button
-            onClick={() => setDarkMode(!darkMode)}
-            className="p-2 rounded-full bg-gray-200 dark:bg-gray-700 transition-colors duration-300"
-          >
-            {darkMode ? <Sun size={20} /> : <Moon size={20} />}
-          </button>
+          {renderThemeToggle()}
         </div>
       </nav>
     </header>

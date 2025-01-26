@@ -1,14 +1,14 @@
 // app/layout.tsx
+import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import { ThemeProvider } from '@/providers/ThemeProvider';
 import './globals.css';
-import { siteConfig } from '@/config/site';
+import { ThemeProvider } from '@/providers/ThemeProvider';
 
 const inter = Inter({ subsets: ['latin'] });
 
-export const metadata = {
-  title: `${siteConfig.name} - Portfolio`,
-  description: 'Full-stack developer specializing in Next.js and React',
+export const metadata: Metadata = {
+  title: 'Portfolio',
+  description: 'My portfolio website',
 };
 
 export default function RootLayout({
@@ -18,6 +18,26 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              try {
+                let theme = localStorage.getItem('theme');
+                if (!theme) {
+                  localStorage.setItem('theme', 'light');
+                  theme = 'light';
+                }
+                if (theme === 'dark') {
+                  document.documentElement.classList.add('dark');
+                } else {
+                  document.documentElement.classList.remove('dark');
+                }
+              } catch (e) {}
+            `,
+          }}
+        />
+      </head>
       <body className={inter.className}>
         <ThemeProvider>{children}</ThemeProvider>
       </body>
