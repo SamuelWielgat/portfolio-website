@@ -29,17 +29,19 @@ const projects: Project[] = [
   // },
   {
     title: 'Design Studio',
-    description: 'A design studio portfolio website',
+    description:
+      'Developed a modern, responsive design studio portfolio website using Next.js, React, TypeScript, and Tailwind CSS. This project serves as a sleek and functional template, showcasing a potential customer’s brand identity through visually appealing layouts, seamless navigation, and optimized performance. Designed with scalability and customizability in mind, it highlights best practices in front-end development and delivers a user-friendly experience tailored to creative professionals.',
     image: defaultImage,
     link: 'https://www.design-studio-portfolio-project.com/',
     technologies: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
   },
   {
     title: 'Workout Tracker',
-    description: 'A workout tracker website',
+    description:
+      'Designed and implemented a full-stack Workout Tracker app using the MERN stack. The application enables users to log and track their workout sessions, featuring user authentication, CRUD operations, and a dark-themed, user-friendly interface. Deployed on Vercel for the frontend and a cloud-based server for the backend, showcasing proficiency in React, Node.js, Express.js, and MongoDB.',
     image: defaultImage,
     link: 'https://workout-tracker-client-blue.vercel.app',
-    technologies: ['React', 'Javascript', 'CSS', 'HTML'],
+    technologies: ['React', 'Node.js', 'Express.js', 'MongoDB'],
   },
   {
     title: 'AI Code Reviewer',
